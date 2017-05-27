@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+	<bean name="car" class="sj.learning.aop.model.Car">
+		<property name="name" value="AUDI" />
+		<property name="model" value="A4 Sedon" />
+	</bean>
+
+	<bean name="ship" class="sj.learning.aop.model.Ship">
+		<property name="name" value="Carnival" />
+		<property name="type" value="container" />
+	</bean>
+	<bean name="vehicleService" class="sj.learning.aop.VehicleService"
+		autowire="byName" />
+
+	<bean name="loggerAspect" class="sj.learning.aop.aspect.LoggerAspect" />
+
+
+</beans>
